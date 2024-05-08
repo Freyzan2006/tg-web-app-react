@@ -2,22 +2,21 @@
 import { useEffect } from "react"
 import "./App.css"
 
-import tg from "./api/tgApi";
+import { tgApi } from "./api/tgApi";
 
 
 const App = () => {
+  const { tg, onToggleButton } = tgApi();
 
   useEffect(() => {
     tg.ready();
   }, []);
 
-  const onClose = () => {
-    tg.close();
-  }
+ 
 
   return (
     <div className = "App">
-      <button onClick = { onClose }>Закрыть</button>
+        <button onClick = { onToggleButton }>toggle</button>
     </div>
   )
 }
