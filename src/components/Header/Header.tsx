@@ -16,9 +16,9 @@ interface InitDataUnsafe {
 }
   
   // Определяем тип данных для tg
-interface Tg {
-    initDataUnsafe?: InitDataUnsafe;
-}
+// interface Tg {
+//     initDataUnsafe?: InitDataUnsafe;
+// }
 
 const Header: React.FC = () => {
     const onClose = () => {
