@@ -6,7 +6,7 @@ import { tgApi } from "./api/tgApi";
 import Header from "./components/Header/Header";
 
 
-const App = () => {
+const App: React.FC = () => {
   const { tg, onToggleButton } = tgApi();
 
   useEffect(() => {

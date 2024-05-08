@@ -12,7 +12,16 @@ interface IMainButton {
     hide: () => void
 
     isVisible: boolean
+
+    setParams: (params: ISetParams) => void
 }
+
+interface ISetParams {
+    text: string
+}
+
+
+
   
 declare global {
     interface Window {
