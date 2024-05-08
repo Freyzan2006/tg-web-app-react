@@ -57,7 +57,7 @@ export function tgApi() {
         if (tg.MainButton.isVisible) {
             tg.MainButton.show();
         } else {
-
+            tg.MainButton.show();
         }
     }
 
