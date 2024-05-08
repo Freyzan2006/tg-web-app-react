@@ -9,6 +9,8 @@ interface TelegramWebApp {
 
 interface IMainButton {
     show: () => void
+    hide: () => void
+
     isVisible: boolean
 }
   
@@ -55,7 +57,7 @@ export function tgApi() {
 
     const onToggleButton = () => {
         if (tg.MainButton.isVisible) {
-            tg.MainButton.show();
+            tg.MainButton.hide();
         } else {
             tg.MainButton.show();
         }
