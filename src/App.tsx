@@ -2,7 +2,22 @@
 import { useEffect } from "react"
 import "./App.css"
 
-const tg = window.Telegram.WebApp
+interface TelegramWebApp {
+  ready(): void;
+  close(): void;
+}
+
+declare global {
+  interface Window {
+    Telegram: {
+      WebApp: TelegramWebApp;
+    };
+  }
+}
+
+// const tg = window.Telegram.WebApp
+const tg: TelegramWebApp  = window.Telegram.WebApp;
+
 
 const App = () => {
 
