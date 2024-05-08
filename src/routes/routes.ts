@@ -9,12 +9,12 @@ import App from "../App";
 
 
 const routers = createBrowserRouter([
+    // {
+    //     path: "/",
+    //     Component: App
+    // },
     {
-        path: "/",
-        Component: App
-    },
-    {
-        path: "products",
+        path: "/products",
         Component: ProductList,
     },
     {
