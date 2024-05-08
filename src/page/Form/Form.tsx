@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import css from "./Form.module.css";
 import { tgApi } from "../../api/tgApi";
 
@@ -10,7 +10,21 @@ const Form: React.FC = () => {
     
     const { tg } = tgApi();
 
-   
+    const onSendData = useCallback(() => {
+        const data = {
+            country,
+            street,
+            subject
+        }
+        tg.sendData(JSON.stringify(data));
+    }, [])
+
+    useEffect(() => {
+        tg.onEvent("mainButtonClicked", onSendData);
+        return () => {
+            tg.offEvent("mainButtonClicked", onSendData);
+        }
+    }, [])
 
     useEffect(() => {
         tg.MainButton.setParams({

@@ -1,9 +1,14 @@
 interface TelegramWebApp {
+    sendData(arg0: string): unknown;
     ready(): void;
     close(): void;
 
     initDataUnsafe: object;
     MainButton: IMainButton
+
+    onEvent: (eventType :string, callback: () => void) => void
+    offEvent: (eventType: string, callback: () => void) => void
+    // sendData: () => void
     
 }
 
@@ -14,7 +19,11 @@ interface IMainButton {
     isVisible: boolean
 
     setParams: (params: ISetParams) => void
+
+
 }
+
+
 
 interface ISetParams {
     text: string
@@ -27,6 +36,8 @@ declare global {
     interface Window {
         Telegram: {
             WebApp: TelegramWebApp;
+
+        
         };
     }
 }
