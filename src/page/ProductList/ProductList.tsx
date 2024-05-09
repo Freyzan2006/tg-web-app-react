@@ -41,14 +41,14 @@ const ProductList: React.FC = () => {
             products: addedItems,
             totalPrice: getTotalPrice(addedItems)
         }
-        console.log(data)
-        // fetch("https://54.187.200.255:8000/web-data", {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     },
-        //     body: JSON.stringify(data)
-        // })
+     
+        fetch("https://tg-web-app-nodejs.onrender.com/web-data", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
    
     }, [addedItems])
 
