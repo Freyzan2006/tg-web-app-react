@@ -7,9 +7,7 @@ interface TelegramWebApp {
     MainButton: IMainButton
 
     onEvent: (eventType :string, callback: () => void) => void
-    offEvent: (eventType: string, callback: () => void) => void
-    // sendData: () => void
-    
+    offEvent: (eventType: string, callback: () => void) => void    
 }
 
 interface IMainButton {
@@ -51,6 +49,7 @@ interface User {
   // Определяем интерфейс для initDataUnsafe
 interface InitDataUnsafe {
     user?: User;
+    queryId?: number;
 // Другие свойства initDataUnsafe, если они есть
 }
   
@@ -87,7 +86,8 @@ export function tgApi() {
         onClose,
         onToggleButton,
         tg,
-        user: user
+        user: user,
+        queryId: my_initDataUnsafe?.queryId
     }
 }
 

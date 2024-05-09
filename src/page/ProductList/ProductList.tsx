@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import ProductItem from "../../components/ProductItem/ProductItem";
 import css from "./ProductList.module.css";
 import { tgApi } from "../../api/tgApi";
@@ -33,7 +33,30 @@ const getTotalPrice = (items: IProduct[]) => {
 
 const ProductList: React.FC = () => {
     const [ addedItems, setAddedItems ] = useState<IProduct[]>([]);
-    const { tg } = tgApi();
+    const { tg, queryId } = tgApi();
+
+    const onSendData = useCallback(() => {
+        const data = {
+            queryId,
+            products: addedItems,
+            totalPrice: getTotalPrice(addedItems)
+        }
+        fetch("http://localhost:8000", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        // tg.sendData(JSON.stringify(data));
+    }, [])
+
+    useEffect(() => {
+        tg.onEvent("mainButtonClicked", onSendData);
+        return () => {
+            tg.offEvent("mainButtonClicked", onSendData);
+        }
+    }, [onSendData])
 
     const onAdd = ( product: IProduct ) => {
         const alreadyAdded = addedItems.find((item: IProduct) => item.id === product.id);
