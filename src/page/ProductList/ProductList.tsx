@@ -41,7 +41,7 @@ const ProductList: React.FC = () => {
             products: addedItems,
             totalPrice: getTotalPrice(addedItems)
         }
-        fetch("http://54.187.200.255:8000/web-data", {
+        fetch("https://54.187.200.255:8000/web-data", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
