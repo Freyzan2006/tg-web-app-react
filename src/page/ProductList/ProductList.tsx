@@ -41,14 +41,14 @@ const ProductList: React.FC = () => {
             products: addedItems,
             totalPrice: getTotalPrice(addedItems)
         }
-        fetch("http://localhost:8000", {
+        fetch("https://tg-web-app-nodejs.onrender.com", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(data)
         })
-        // tg.sendData(JSON.stringify(data));
+   
     }, [])
 
     useEffect(() => {
