@@ -49,7 +49,7 @@ const ProductList: React.FC = () => {
             body: JSON.stringify(data)
         })
    
-    }, [])
+    }, [addedItems])
 
     useEffect(() => {
         tg.onEvent("mainButtonClicked", onSendData);
