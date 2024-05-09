@@ -65,8 +65,9 @@ interface InitDataUnsafe {
 // const my_user: User | undefined = my_initDataUnsafe?.user;
 // const my_username: string | undefined = my_user?.username || "No Username"
 
+const tg: TelegramWebApp = window.Telegram.WebApp;
 export function tgApi() {
-    const tg: TelegramWebApp = window.Telegram.WebApp;
+    
     const my_initDataUnsafe: InitDataUnsafe | undefined = tg.initDataUnsafe;
     const user: User | undefined = my_initDataUnsafe.user;
 
