@@ -8,6 +8,7 @@ interface TelegramWebApp {
 
     onEvent: (eventType :string, callback: () => void) => void
     offEvent: (eventType: string, callback: () => void) => void    
+    expand: () => void
 }
 
 interface IMainButton {
@@ -15,6 +16,8 @@ interface IMainButton {
     hide: () => void
 
     isVisible: boolean
+    textColor: string
+    color: string
 
     setParams: (params: ISetParams) => void
 
@@ -34,8 +37,6 @@ declare global {
     interface Window {
         Telegram: {
             WebApp: TelegramWebApp;
-
-        
         };
     }
 }
@@ -43,29 +44,21 @@ declare global {
 
 interface User {
     username?: string;
-    // Другие свойства пользователя, если они есть
 }
   
-  // Определяем интерфейс для initDataUnsafe
+
 interface InitDataUnsafe {
     user?: User;
     queryId?: number;
-// Другие свойства initDataUnsafe, если они есть
 }
   
-  // Определяем тип данных для tg
-// interface Tg {
-//     initDataUnsafe?: InitDataUnsafe;
-// }
-
-  
-// const tg: TelegramWebApp  = window.Telegram.WebApp;
-
-// const my_initDataUnsafe: InitDataUnsafe  | undefined = tg.initDataUnsafe;
-// const my_user: User | undefined = my_initDataUnsafe?.user;
-// const my_username: string | undefined = my_user?.username || "No Username"
+ 
 
 const tg: TelegramWebApp = window.Telegram.WebApp;
+tg.expand();
+tg.MainButton.textColor = "#ffffff";
+tg.MainButton.color = "#2cad37";
+
 export function tgApi() {
     
     const my_initDataUnsafe: InitDataUnsafe | undefined = tg.initDataUnsafe;
@@ -92,4 +85,3 @@ export function tgApi() {
     }
 }
 
-// export default tg;

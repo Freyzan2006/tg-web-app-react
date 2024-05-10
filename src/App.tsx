@@ -4,12 +4,13 @@ import "./App.css"
 
 import { tgApi } from "./api/tgApi";
 import Header from "./components/Header/Header";
+import Container from "./components/Container/Container";
 
 
 
 
 const App: React.FC = () => {
-  const { tg, onToggleButton } = tgApi();
+  const { tg } = tgApi();
 
   useEffect(() => {
     tg.ready();
@@ -19,10 +20,9 @@ const App: React.FC = () => {
 
   return (
     <div className = "App">
-        <Header />
-   
-        <button onClick = { onToggleButton }>toggle</button>
-        
+        <Container>
+          <Header />
+        </Container>
     </div>
   )
 }
