@@ -3,7 +3,7 @@ import css from "./Button.module.css";
 interface IProps {
     className?: string
     onClick: () => void
-    children: string | undefined;
+    children: React.ReactNode | undefined;
 }
 
 const Button: React.FC<IProps> = ( props ) => {

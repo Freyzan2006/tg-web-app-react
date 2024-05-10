@@ -1,12 +1,25 @@
 .product {
     display: flex;
     flex-direction: column;
+    align-items: center;
     border: 1px solid var(--tg-theme-button-color);
     padding: 15px;
-    width: 170px;
+    max-width: 200px;
+    width: 100%;
+    border-radius: 30px;
+    border: 1px solid gold;
+    background-color: rgba(54, 54, 54, 0.856);
+    transition: 0.5s;
 }
 
+.product:hover {
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.219);
+    transform: scale(105%);
+} 
+
+
 .img {
+    max-width: 150px;
     width: 100%;
     background: lightblue;
     height: 100px;
@@ -14,14 +27,33 @@
     background: var(--tg-theme-button-color);
 }
 
+.title {
+    font-size: 25px;
+    color: gold;
+}
+
 .description {
     font-size: 0.8em;
+    color: aliceblue;
 }
 
 .price {
     color: gold;
+    font-size: 23px;
+    font-weight: 600;
 }
 
 .add_btn {
     width: 100%;
+    border-radius: 30px;
+    color: black;
+    background-color: gold;
+    transition: 0.5s;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.add_btn:hover {
+    background-color: yellow;
+    transform: scale(105%);
 }

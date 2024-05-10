@@ -1,13 +1,66 @@
 .header {
     width: 100%;
-    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
-    padding: 0 20px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.644);
+    border-radius: 0 15px;
+    padding: 15px 0;
 }
 
 .username {
-    margin-left: auto;
+    background-color: gold;
+    max-width: 100px;
+    width: 100%;
+    border-radius: 15px 0;
+    padding: 15px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.menu__link {
+    color: gold;
+    opacity: 0.5;
+    position: relative;
+    transition: 0.5s;
+}
+
+.menu__link:hover {
+    opacity: 1;
+}
+
+.menu__link::before,
+.menu__link::after {
+    content: '';
+    background-color: gold;
+    width: 0;
+    height: 3px;
+    position: absolute;
+    transition: 0.5s;
+    bottom: -10px;
+}
+
+.menu__link:hover::before,
+.menu__link:hover::after {
+    width: 100%;
+    opacity: 1;
+}
+
+.menu__link::before {
+    right: 0;
+}
+
+.menu__link::after {
+    left: 0;
+}
+

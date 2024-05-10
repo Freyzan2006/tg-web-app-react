@@ -2,27 +2,24 @@ import { useCallback, useEffect, useState } from "react";
 import ProductItem from "../../components/ProductItem/ProductItem";
 import css from "./ProductList.module.css";
 import { tgApi } from "../../api/tgApi";
+import Container from "../../components/Container/Container";
+import Header from "../../components/Header/Header";
 
 interface IProduct {
     id: number
     title: string 
     description: string
     price: number
+    img: string
 }
 
 const products: IProduct[] = [
-    { id: 1, title: "Джинсы", price: 5000, description: "Синии цвет,  прямые"},
-    { id: 2, title: "Куртка", price: 2000, description: "Зелёный цвет,  кревые"},
-    { id: 3, title: "Джинсы 1", price: 7000, description: "Красный цвет,  прямые"},
-    { id: 4, title: "Джинсы 8", price: 4000, description: "Голубой цвет,  прямые"},
-    { id: 5, title: "Куртка 2", price: 2000, description: "Фиолетовый цвет,  кревые"},
-    { id: 6, title: "Куртка 10", price: 1000, description: "Жёлтый цвет,  прямые"},
-    { id: 7, title: "Джинсы 22", price: 10000, description: "Оранджевый цвет,  прямые"},
-    { id: 8, title: "Джинсы 33", price: 15000, description: "Морской цвет,  кревые"},
-    { id: 9, title: "Джинсы 44", price: 800, description: "Сервый цвет,  прямые"},
-    { id: 10, title: "Куртка 55", price: 500, description: "Салатовый цвет,  прямые"},
-    { id: 11, title: "Куртка 111", price: 600, description: "Каричневый цвет,  кревые"},
-    { id: 12, title: "Джинсы 3", price: 700, description: "Пурпуровый цвет,  прямые"},
+    { id: 1, img: "src/assets/img/products/img0.jpg", title: "PC 1", price: 5000, description: "Синии цвет,  прямые"},
+    { id: 2, img: "src/assets/img/products/img1.jpg",  title: "PC 2", price: 2000, description: "Зелёный цвет,  кревые"},
+    { id: 3, img: "src/assets/img/products/img2.jpg", title: "PC 3", price: 7000, description: "Красный цвет,  прямые"},
+    { id: 4, img: "src/assets/img/products/img3.jpg", title: "PC 4", price: 4000, description: "Голубой цвет,  прямые"},
+    { id: 5, img: "src/assets/img/products/img4.jpg", title: "PC 5", price: 2000, description: "Фиолетовый цвет,  кревые"},
+    { id: 6, img: "src/assets/img/products/img5.jpg", title: "PC 6", price: 1000, description: "Жёлтый цвет,  прямые"},
 ]
 
 const getTotalPrice = (items: IProduct[]) => {
@@ -83,17 +80,23 @@ const ProductList: React.FC = () => {
 
 
     return (
-        <div className = { css.list }> 
-            { products.map(item => (
-                <ProductItem 
-                    key = { item.id }
+      
+            
+        <Container>
+            <Header />
+            <div className = { css.list }> 
+                { products.map((item) => (
+                    <ProductItem 
+                        key = { item.id }
 
-                    product = { item }
-                    onAdd = { onAdd }
-                    className = { css.item }
-                />
-            )) }
-        </div>
+                        product = { item }
+                        onAdd = { onAdd }
+                        className = { css.item }
+                    />
+                )) }
+            </div>
+        </Container>
+       
     )
 }
 

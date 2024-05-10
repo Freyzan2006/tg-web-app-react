@@ -7,6 +7,7 @@ interface IProduct {
     title: string 
     description: string
     price: number
+    img: string
 }
 
 interface IProps {
@@ -15,13 +16,13 @@ interface IProps {
     onAdd: (product: IProduct) => void 
 }
 
-const ProductItem: React.FC<IProps> = ({ product, className, onAdd}) => {
+const ProductItem: React.FC<IProps> = ({ product, className, onAdd }) => {
 
     const onAddHandler = () => onAdd(product);
 
     return (
         <div className = { css.product + " " + className }>
-            <div className = { css.img } />
+            <img src = { product.img } className = { css.img } />
             <div className = { css.title }>{ product.title }</div>
             <div className = { css.description }>{ product.description }</div>
             <div className = { css.price }>

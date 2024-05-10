@@ -6,6 +6,8 @@
 }
 
 body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
 }
+
