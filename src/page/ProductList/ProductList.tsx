@@ -13,13 +13,15 @@ interface IProduct {
     img: string
 }
 
+import { img0, img1, img2, img3, img4, img5 } from "../../assets/img/products/img";
+
 const products: IProduct[] = [
-    { id: 1, img: "src/assets/img/products/img0.jpg", title: "PC 1", price: 5000, description: "Синии цвет,  прямые"},
-    { id: 2, img: "src/assets/img/products/img1.jpg",  title: "PC 2", price: 2000, description: "Зелёный цвет,  кревые"},
-    { id: 3, img: "src/assets/img/products/img2.jpg", title: "PC 3", price: 7000, description: "Красный цвет,  прямые"},
-    { id: 4, img: "src/assets/img/products/img3.jpg", title: "PC 4", price: 4000, description: "Голубой цвет,  прямые"},
-    { id: 5, img: "src/assets/img/products/img4.jpg", title: "PC 5", price: 2000, description: "Фиолетовый цвет,  кревые"},
-    { id: 6, img: "src/assets/img/products/img5.jpg", title: "PC 6", price: 1000, description: "Жёлтый цвет,  прямые"},
+    { id: 1, img: img0, title: "PC 1", price: 5000, description: "Синии цвет,  прямые"},
+    { id: 2, img: img1, title: "PC 2", price: 2000, description: "Зелёный цвет,  кревые"},
+    { id: 3, img: img2, title: "PC 3", price: 7000, description: "Красный цвет,  прямые"},
+    { id: 4, img: img3, title: "PC 4", price: 4000, description: "Голубой цвет,  прямые"},
+    { id: 5, img: img4, title: "PC 5", price: 2000, description: "Фиолетовый цвет,  кревые"},
+    { id: 6, img: img5, title: "PC 6", price: 1000, description: "Жёлтый цвет,  прямые"},
 ]
 
 const getTotalPrice = (items: IProduct[]) => {
