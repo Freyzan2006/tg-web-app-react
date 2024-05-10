@@ -22,7 +22,7 @@
     align-items: center;
 
     background: var(--tg-theme-bg-color);
-    color: var(--tg-theme-button-text-color);
+    color: var(--tg-theme-text-color);
 }
 
 .menu {
@@ -33,7 +33,7 @@
 }
 
 .menu__link {
-    color: var(--tg-theme-button-text-color);
+    color: var(--tg-theme-text-color);
     opacity: 0.5;
     position: relative;
     transition: 0.5s;
@@ -46,7 +46,7 @@
 .menu__link::before,
 .menu__link::after {
     content: '';
-    background-color: var(--tg-theme-button-text-color);
+    background-color: var(--tg-theme-text-color);
     width: 0;
     height: 3px;
     position: absolute;
