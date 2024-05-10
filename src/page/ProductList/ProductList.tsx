@@ -87,6 +87,7 @@ const ProductList: React.FC = () => {
 
     return (
         <Container>
+            <p style = { { color: "red", fontSize: "40px" } }>{ queryId }</p>
             <Header countItem = { countItem } />
             <div className = { css.list }> 
                 { products.map((item) => (
