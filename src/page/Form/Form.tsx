@@ -2,6 +2,8 @@
 import { useCallback, useEffect, useState } from "react";
 import css from "./Form.module.css";
 import { tgApi } from "../../api/tgApi";
+import Container from "../../components/Container/Container";
+import Header from "../../components/Header/Header";
 
 const Form: React.FC = () => {
     const [ country, setCountry ] = useState<string>('');
@@ -45,14 +47,17 @@ const Form: React.FC = () => {
     const onChangeSubject = (e: React.ChangeEvent<HTMLSelectElement>) => setSubject(e.target.value);
 
     return (
-        <form action="" className = { css.form }>
-            <input onChange = { onChangeCountry } value = { country } type="text" className = { css.input } placeholder = "Страна"/>
-            <input onChange = { onChangeStreet } value = { street } className= { css.input } placeholder = "Улица" />
-            <select onChange = { onChangeSubject } value = { subject } className = { css.select }>
-                <option value= " phtsical ">Физ. лицо</option>
-                <option value= " legal " >Юр. лицо</option>
-            </select>
-        </form>
+        <Container>
+            <Header />
+            <form action="" className = { css.form }>
+                <input onChange = { onChangeCountry } value = { country } type="text" className = { css.input } placeholder = "Страна"/>
+                <input onChange = { onChangeStreet } value = { street } className= { css.input } placeholder = "Улица" />
+                <select onChange = { onChangeSubject } value = { subject } className = { css.select }>
+                    <option value= " phtsical ">Физ. лицо</option>
+                    <option value= " legal " >Юр. лицо</option>
+                </select>
+            </form>
+        </Container>
       
 
     )

@@ -29,8 +29,8 @@ const Header: React.FC<IProps> = ({ countItem }) => {
             </span>
 
             <menu className = { css.menu }>
-                <li><Link className = { css.menu__link } to = { "/form" }><MdPlace /> Доставка { countItem }</Link></li>
-                <li><Link className = { css.menu__link } to = { "/products" }><FaShoppingCart /> Продукты</Link></li>
+                <li><Link className = { css.menu__link } to = { "/form" }><MdPlace /></Link></li>
+                <li><Link className = { css.menu__link } to = { "/products" }><FaShoppingCart /> { countItem }</Link></li>
             </menu>
         </header>
     )

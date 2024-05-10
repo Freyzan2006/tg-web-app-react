@@ -6,8 +6,18 @@
     padding: 20px;
 }
 
-.input {
+.input,
+.select {
+    background-color: rgb(44, 44, 44);
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.589) inset;
+    border: none;
+    max-width: 120px;
     width: 100%;
+    color: aliceblue;
+}
+
+.input {
+
     padding: 10px;
     margin-top: 15px;
 }
