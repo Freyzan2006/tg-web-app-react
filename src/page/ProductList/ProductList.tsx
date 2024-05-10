@@ -30,6 +30,8 @@ const getTotalPrice = (items: IProduct[]) => {
 
 const ProductList: React.FC = () => {
     const [ addedItems, setAddedItems ] = useState<IProduct[]>([]);
+    let [ countItem, setCountItem ] = useState<number>(0);
+
     const { tg, queryId } = tgApi();
 
     const onSendData = useCallback(() => {
@@ -62,9 +64,11 @@ const ProductList: React.FC = () => {
 
         if (alreadyAdded) {
             newItems = addedItems.filter((item: IProduct) => item.id !== product.id);
+            newItems.length;
         } else {
             newItems = [...addedItems, product];
         }
+        setCountItem(newItems.length);
 
         if (newItems.length === 0) {
             tg.MainButton.hide();
@@ -83,7 +87,7 @@ const ProductList: React.FC = () => {
       
             
         <Container>
-            <Header />
+            <Header countItem = { countItem } />
             <div className = { css.list }> 
                 { products.map((item) => (
                     <ProductItem 

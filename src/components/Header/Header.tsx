@@ -8,7 +8,11 @@ import { Link } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { FaRegUserCircle } from "react-icons/fa";
 
-const Header: React.FC = () => {
+interface IProps {
+    countItem?: number
+}
+
+const Header: React.FC<IProps> = ({ countItem }) => {
     
     const { user, onClose } = tgApi();
  
@@ -23,7 +27,7 @@ const Header: React.FC = () => {
             </span>
 
             <menu className = { css.menu }>
-                <li><Link className = { css.menu__link } to = { "/form" }>Доставка</Link></li>
+                <li><Link className = { css.menu__link } to = { "/form" }>Доставка { countItem }</Link></li>
                 <li><Link className = { css.menu__link } to = { "/products" }>Продукты</Link></li>
             </menu>
         </header>
