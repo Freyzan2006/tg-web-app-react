@@ -6,7 +6,9 @@ import { tgApi } from "../../api/tgApi";
 import { Link } from "react-router-dom";
 
 import { IoIosArrowBack } from "react-icons/io";
-import { FaRegUserCircle } from "react-icons/fa";
+import { FaRegUserCircle, FaShoppingCart } from "react-icons/fa";
+import { MdPlace } from "react-icons/md";
+
 
 interface IProps {
     countItem?: number
@@ -27,8 +29,8 @@ const Header: React.FC<IProps> = ({ countItem }) => {
             </span>
 
             <menu className = { css.menu }>
-                <li><Link className = { css.menu__link } to = { "/form" }>Доставка { countItem }</Link></li>
-                <li><Link className = { css.menu__link } to = { "/products" }>Продукты</Link></li>
+                <li><Link className = { css.menu__link } to = { "/form" }><MdPlace /> Доставка { countItem }</Link></li>
+                <li><Link className = { css.menu__link } to = { "/products" }><FaShoppingCart /> Продукты</Link></li>
             </menu>
         </header>
     )

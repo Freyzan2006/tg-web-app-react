@@ -86,8 +86,6 @@ const ProductList: React.FC = () => {
 
 
     return (
-      
-            
         <Container>
             <Header countItem = { countItem } />
             <div className = { css.list }> 
