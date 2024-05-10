@@ -21,8 +21,8 @@
     flex-direction: column;
     align-items: center;
 
-    background: var(--tg-theme-bg-color);
-    color: var(--tg-theme-text-color);
+    background: gold;
+    color: black;
 }
 
 .menu {
@@ -46,7 +46,7 @@
 .menu__link::before,
 .menu__link::after {
     content: '';
-    background-color: var(--tg-theme-text-color);
+    background-color: gold;
     width: 0;
     height: 3px;
     position: absolute;
